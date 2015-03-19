@@ -6,7 +6,7 @@
 #include "lib/appEnv.hpp"
 #include "lib/random.hpp"
 #include "headers\macros.hpp"
-#include "headers\Gun.hpp"
+#include "headers\Shot.hpp"
 #include "headers\Point.hpp"
 
 // 
@@ -18,7 +18,7 @@ void Draw()
 	int b_point_x[] = { 0, -100, -220, -220, -220, 220, 220, 100, 100, -100 };
 	int b_point_y[] = { 220, 220, 220, 0, -220, -220, 220, 220, -100, -100 };
 
-	for (int i = 0; i < GUN_MAX; i++){
+	for (int i = 0; i < SHOT_MAX; i++){
 
 		drawPoint(b_point_x[i], b_point_y[i], 10, Color(1, 0, 0));
 	}
@@ -28,29 +28,29 @@ void Draw()
 int main() {
 	AppEnv env(Window::WIDTH, Window::HEIGHT, false, false);
 
-	Gun gun;
+	Shot shot;
 	Point point;
 	while (env.isOpen()) {
-		gun.Aim(env, point);
+		shot.Aim(env, point);
 
-		gun.Create(env, point);
+		shot.Create(env, point);
 	
 
-		gun.Move(env);
+		shot.Move(env);
 
-		gun.Bound();
+		shot.Reflect();
 
 
 
 		if (env.isPushKey('R'))
 		{
-			gun.Reset();
+			shot.Reset();
 			point.Reset();
 		}
 		env.setupDraw();
 
 		Draw();
-		gun.Draw();
+		shot.Draw();
 		point.Draw();
 		env.update();
 	}
