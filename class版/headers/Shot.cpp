@@ -56,46 +56,6 @@ void Shot::Move(AppEnv& env)
 			shot[i].x += shot[i].speed_x;
 		}
 
-		if (shot[i].x == 0 && shot[i].y == 220)
-		{
-			shot[i].direction = 3;
-		}
-		if (shot[i].x == -100 && shot[i].y == 220)
-		{
-			shot[i].direction = 3;
-		}
-		if (shot[i].x == -220 && shot[i].y == 220)
-		{
-			shot[i].direction = 2;
-		}
-		if (shot[i].x == -220 && shot[i].y == 0)
-		{
-			shot[i].direction = 2;
-		}
-		if (shot[i].x == -220 && shot[i].y == -220)
-		{
-			shot[i].direction = 4;
-		}
-		if (shot[i].x == 220 && shot[i].y == -220)
-		{
-			shot[i].direction = 1;
-		}
-		if (shot[i].x == 220 && shot[i].y == 220)
-		{
-			shot[i].direction = 3;
-		}
-		if (shot[i].x == 100 && shot[i].y == 220)
-		{
-			shot[i].direction = 2;
-		}
-		if (shot[i].x == 100 && shot[i].y == -100)
-		{
-			shot[i].direction = 3;
-		}
-		if (shot[i].x == -100 && shot[i].y == -100)
-		{
-			shot[i].direction = 1;
-		}
 
 	}
 }

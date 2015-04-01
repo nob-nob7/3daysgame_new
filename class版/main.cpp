@@ -8,21 +8,11 @@
 #include "headers\macros.hpp"
 #include "headers\Shot.hpp"
 #include "headers\Point.hpp"
+#include "headers\Reflector.hpp"
 
 // 
 // メインプログラム
 // 
-
-void Draw()
-{
-	int b_point_x[] = { 0, -100, -220, -220, -220, 220, 220, 100, 100, -100 };
-	int b_point_y[] = { 220, 220, 220, 0, -220, -220, 220, 220, -100, -100 };
-
-	for (int i = 0; i < SHOT_MAX; i++){
-
-		drawPoint(b_point_x[i], b_point_y[i], 10, Color(1, 0, 0));
-	}
-}
 
 
 int main() {
@@ -30,6 +20,7 @@ int main() {
 
 	Shot shot;
 	Point point;
+	Reflector reflect;
 	while (env.isOpen()) {
 		shot.Aim(env, point);
 
@@ -49,7 +40,8 @@ int main() {
 		}
 		env.setupDraw();
 
-		Draw();
+		reflect.Draw();
+		reflect.Reflect(shot);
 		shot.Draw();
 		point.Draw();
 		env.update();

@@ -15,7 +15,7 @@ private:
 		Color color;
 	};
 	
-	Shot_ shot[SHOT_MAX];
+	
 
 public:
 	void Create(AppEnv& env ,Point& point);
@@ -24,6 +24,7 @@ public:
 	void Reflect();
 	void Reset();
 	void Draw();
+	Shot_ shot[SHOT_MAX];
 	Shot();
 
 };
